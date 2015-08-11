@@ -20,7 +20,7 @@ module.exports = [{
   message: 'Type your database host',
   default: 'localhost',
   when: function (answers) {
-    return !(['PostgreSQL', 'MySQL', 'Mongo', 'SQLServer', 'Redis', 'OrientDB'].indexOf(answers['database:adapter']) === -1);
+    return (['PostgreSQL', 'MySQL', 'Mongo', 'SQLServer', 'Redis', 'OrientDB'].indexOf(answers['database:adapter']) !== -1);
   }
 }, {
   type: 'input',
@@ -28,7 +28,7 @@ module.exports = [{
   message: 'Type your database name',
   default: 'sails-rest-api',
   when: function (answers) {
-    return !(['PostgreSQL', 'MySQL', 'Mongo', 'SQLServer', 'Redis', 'OrientDB'].indexOf(answers['database:adapter']) === -1);
+    return (['PostgreSQL', 'MySQL', 'Mongo', 'SQLServer', 'Redis', 'OrientDB'].indexOf(answers['database:adapter']) !== -1);
   }
 }, {
   type: 'input',
@@ -36,7 +36,7 @@ module.exports = [{
   message: 'Type your database username',
   default: '',
   when: function (answers) {
-    return !(['PostgreSQL', 'MySQL', 'Mongo', 'SQLServer', 'OrientDB'].indexOf(answers['database:adapter']) === -1);
+    return (['PostgreSQL', 'MySQL', 'Mongo', 'SQLServer', 'OrientDB'].indexOf(answers['database:adapter']) !== -1);
   }
 }, {
   type: 'password',
@@ -44,7 +44,7 @@ module.exports = [{
   message: 'Type your database password',
   default: '',
   when: function (answers) {
-    return !(['PostgreSQL', 'MySQL', 'Mongo', 'SQLServer', 'Redis', 'OrientDB'].indexOf(answers['database:adapter']) === -1);
+    return (['PostgreSQL', 'MySQL', 'Mongo', 'SQLServer', 'Redis', 'OrientDB'].indexOf(answers['database:adapter']) !== -1);
   }
 }, {
   type: 'input',
@@ -52,7 +52,7 @@ module.exports = [{
   message: 'Type your DynamoDB Access Key ID',
   default: '',
   when: function (answers) {
-    return !(['DynamoDB'].indexOf(answers['database:adapter']) === -1);
+    return (['DynamoDB'].indexOf(answers['database:adapter']) !== -1);
   }
 }, {
   type: 'input',
@@ -60,7 +60,7 @@ module.exports = [{
   message: 'Type your DynamoDB Secret Access Key',
   default: '',
   when: function (answers) {
-    return !(['DynamoDB'].indexOf(answers['database:adapter']) === -1);
+    return (['DynamoDB'].indexOf(answers['database:adapter']) !== -1);
   }
 }, {
   type: 'input',
@@ -68,6 +68,6 @@ module.exports = [{
   message: 'Type your DynamoDB region',
   default: 'us-west-1',
   when: function (answers) {
-    return !(['DynamoDB'].indexOf(answers['database:adapter']) === -1);
+    return (['DynamoDB'].indexOf(answers['database:adapter']) !== -1);
   }
 }];
