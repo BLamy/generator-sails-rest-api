@@ -1,4 +1,7 @@
 language: node_js
+addons:
+    code_climate:
+        repo_token: b9bbbfdc7dd758719fc3f672785f35a357ed19717519534d08ca871116cf3142
 node_js:
   - '0.10'
   - '0.11'
@@ -9,3 +12,4 @@ before_install:
   - if [ "$currentfolder" != 'generator-sails-rest-api' ]; then cd .. && eval "mv $currentfolder generator-sails-rest-api" && cd generator-sails-rest-api; fi
 after_script:
   - npm install coveralls && cat ./coverage/lcov.info | coveralls
+ 
